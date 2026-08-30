@@ -1,0 +1,406 @@
+baseURL: "https://hugo-profile.netlify.app"
+languageCode: "de-de"
+title: "M.Sc.Psych. Veronika Winkler"
+theme: hugo-profile
+
+# Multilingual configuration
+defaultContentLanguage: "de"
+defaultContentLanguageInSubdir: false
+
+languages:
+  de:
+    languageName: "Deutsch"
+    weight: 1
+    contentDir: "content"
+    menu:
+      main:
+        - identifier: Kontakt
+          name: Kontakt
+          title: Kontakt
+          url: /kontakt
+          weight: 1
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+enableRobotsTXT: true
+
+#services:
+  #googleAnalytics:
+    #id: G-MEASUREMENT_ID
+  #disqus:
+    #shortname: your-disqus-shortname
+
+pagination:
+  pagerSize: 3
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+    - identifier: gallery
+      name: Gallery
+      title: Gallery
+      url: /gallery
+      weight: 2
+    #Dropdown menu
+    # - identifier: dropdown
+    #   title: Example dropdown menu
+    #   name: Dropdown
+    #   weight: 3
+    # - identifier: dropdown1
+    #   title: example dropdown 1
+    #   name: example 1
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 1
+    # - identifier: dropdown2
+    #   title: example dropdown 2
+    #   name: example 2
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 2
+
+params:
+  title: "M.Sc.Psych. Veronika Winkler"
+  description: Praxis für Psychotherapie Veronika Winkler
+  # staticPath: ""  # The path to serve the static files from
+  favicon: "/fav.png"
+
+  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
+  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
+  # Note the lack of "" in true, it should be of boolean type.
+  useBootstrapCDN: false
+
+  # If you want to load dynamically responsive images from Cloudinary
+  # This requires your images to be uploaded + hosted on Cloudinary
+  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
+
+  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
+  mathjax: false
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    # disableThemeToggle: true
+    # defaultTheme: "light" # dark
+
+  font:
+    fontSize: 1rem # default: 1rem
+    fontWeight: 400 # default: 400
+    lineHeight: 1.5 # default: 1.5
+    textAlign: left # default: left
+
+  # color preference
+  # When using hex codes for colors, quotations must be used along with the # sign
+  # color:
+  #   textColor: "#343a40"
+  #   secondaryTextColor: "#6c757d"
+  #   textLinkColor: "#007bff"
+  #   backgroundColor: "#eaedf0"
+  #   secondaryBackgroundColor: "#64ffda1a"
+  #   primaryColor: "#007bff"
+  #   secondaryColor: "#f8f9fa"
+
+  #   darkmode:
+  #     textColor: "#e4e6eb"
+  #     secondaryTextColor: "#b0b3b8"
+  #     textLinkColor: "#ffffff"
+  #     backgroundColor: "#18191a"
+  #     secondaryBackgroundColor: "#212529"
+  #     primaryColor: "#ffffff"
+  #     secondaryColor: "#212529"
+
+  # If you want to customize the menu, you can change it here
+  navbar:
+    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+    # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
+    # showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandName: "Hugo Profile" # Brand name for the brand | default is the title variable
+    disableSearch: false
+    # searchPlaceholder: "Search"
+    stickyNavBar:
+      enable : true
+      showOnScrollUp : true
+    enableSeparator: false
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: false
+      disableContact: false
+
+  # Hero
+  hero:
+    enable: true
+    intro: "Hallo, ich bin"
+    title: "Veronika Winkler"
+    subtitle: "Praxis für Psychotherapie"
+    content: |-
+      Ich wollte schon seitdem ich denken kann als Psychotherapeutin arbeiten, ich hab dieses Ziel immer verfolgt und bin nun super glücklich und dankbar in diesem Beruf arbeiten zu können.
+      Mein Ziel war es zu verstehen, warum Menschen gewisse Entscheidungen treffen, worin sie sich unterscheiden und zu lernen, wie ich sie am besten darin unterstützen kann, mit sich selbst zufrieden zu sein und “klar zu kommen”.
+      Ich freue mich über jeden Patienten, der sich Herz und Mut fasst, um genug Vertrauen aufzubringen sich mir zu öffnen und diese Reise mit mir zu gehen.
+      Ich glaube, es gibt nichts schöneres als mitzuerleben. wie sich gemeinsam alles entwickelt und klärt.
+      Ich arbeite überwiegend mit traumatisierten Patienten & Patienten mit Persönlichkeitsstörungen und sehr gern auch mit Paaren.
+    image: images/veronika-winkler.webp
+    bottomImage:
+      enable: true
+    # roundImage: true # Make hero image circular | default false
+    button:
+      enable: true
+      name: "Lebenslauf"
+      url: "#education"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-address-book
+          url: https://www.therapie.de/profil/veronika.winkler/
+      customIcons:
+        - icon: /fav.png
+          url: "https://example.com"
+
+  # About
+  about:
+    enable: true
+    title: "Über mich"
+    content: |-
+      Ich wollte schon seitdem ich denken kann als Psychotherapeutin arbeiten, ich hab dieses Ziel immer verfolgt und bin nun super glücklich und dankbar in diesem Beruf arbeiten zu können.
+      Mein Ziel war es zu verstehen, warum Menschen gewisse Entscheidungen treffen, worin sie sich unterscheiden und zu lernen, wie ich sie am besten darin unterstützen kann, mit sich selbst zufrieden zu sein und “klar zu kommen”.
+      Ich freue mich über jeden Patienten, der sich Herz und Mut fasst, um genug Vertrauen aufzubringen sich mir zu öffnen und diese Reise mit mir zu gehen.
+      Ich glaube, es gibt nichts schöneres als mitzuerleben. wie sich gemeinsam alles entwickelt und klärt.
+      Ich arbeite überwiegend mit traumatisierten Patienten & Patienten mit Persönlichkeitsstörungen und sehr gern auch mit Paaren.
+    image: "images/veronika-winkler.webp"
+    skills:
+      enable: true
+      title: "Meine Behandlungsschwerpunkte:"
+      items:
+        - "allg. psych. Problem - Lebensberatung"
+        - "Coaching"
+        - "Depression"
+        - "Notfall - Krise"
+        - "Persönlichkeitsstörung"
+        - "Sexualität"
+        - "Stress - Burnout - Mobbing"
+        - "Trauer"
+        - "Trauma - Gewalt - Missbrauch"
+
+  # Experience
+  experience:
+    enable: true
+    title: "Vita"
+    items:
+      - company: "Facebook"
+        companyUrl: "https://example.com"
+        jobs:
+          - name: "Senior Software Developer"
+            date: "Jan 2023 - present"
+            content: "I am currently working as a senior software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
+            info:
+              content: Working as a senior software developer
+            featuredItems:
+              fontAwesomeIcons:
+                - icon: fa-brands fa-react
+                  url: https://react.dev/
+                  tooltip: Example tooltip content
+                - icon: fab fa-x-twitter
+                  url: https://example.com
+                  # tooltip: Example tooltip content
+              customIcons:
+                - icon: /fav.png
+                  url: "https://example.com"
+                  tooltip: Example tooltip content
+          - name: "Software Developer"
+            date: "Jan 2022 - Dec 2023"
+            content: "I worked as a software developer. I worked on a project that will be used to help people find the best way to get around the city."
+
+      - company: "Amazon"
+        companyUrl: "https://example.com"
+        jobs:
+          - name: "Software Developer"
+            date: "Sep 2020 - Dec 2021"
+            info:
+              content: I worked as a software developer for more than one year in Amazon.
+            content: |
+              I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
+
+              - Lead backend developer for a product.
+              - Created a frontend design for a product.
+
+      - company: "Apple"
+        companyUrl: "https://example.com"
+        jobs: 
+        - name: "Junior Software Developer"
+          date: "Jan 2020 - Aug 2020"
+          featuredItems:
+            fontAwesomeIcons:
+              - icon: fa-brands fa-react
+                url: https://react.dev/
+              - icon: fab fa-x-twitter
+                url: https://example.com
+            customIcons:
+              - icon: /fav.png
+                url: "https://example.com"
+          content: |
+            I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
+
+            - Lead backend developer for a product.
+            - Created a frontend design for a product.
+
+      - company: "Netflix"
+        companyUrl: "https://example.com"
+        jobs:
+        - name: "UI/UX Designer"
+          date: "June 2017 - Nov 2019"
+          content: |
+            I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
+
+            - Lead backend developer for a product.
+            - Created a frontend design for a product.
+
+      - company: "Google"
+        companyUrl: "https://example.com"
+        jobs:
+        - name: "Product Designer"
+          date: "Feb 2016 - Mar 2017"
+          content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
+
+  # Education
+  education:
+    enable: true
+    title: "Vita"
+    index: false
+    items:
+      - title: "Schulbildung und Ausbildung"
+        date: "bis 2003"
+        content: |-
+          - Abitur am Goethe Gymnasium Reichenbach.
+          - Ausbildung zur Physiotherapeutin am HBK Zwickau (2000 - 2003).
+
+      - title: "Berufliche Tätigkeit als Physiotherapeutin"
+        date: "2003 - 2007"
+        content: |-
+          - Tätigkeit als Physiotherapeutin in Zwickau, Heilbronn und Reichenbach.
+
+      - title: "Studium und akademische Tätigkeit"
+        school:
+          name: "TU Chemnitz"
+        date: "2007 - 2012"
+        content: |-
+          - Studium der Psychologie.
+          - Studentische Hilfskraft an der Professur für Persönlichkeitspsychologie und der Professur für Motivationspsychologie.
+          - Mitglied in der Fachgruppe Psychologie.
+          - Studentisches Mitglied des Prüfungsausschusses Psychologie (2009 - 2012).
+          - Praktikum an der Klinik Carolabad in Chemnitz.
+          - Bachelor- und Masterarbeit zur Therapie von Schlafstörungen; spätere Publikation der Ergebnisse.
+          - Masterabschluss Psychologie (2012).
+
+      - title: "Weiterbildung und klinisch-psychotherapeutische Tätigkeit"
+        date: "2012 - 2021"
+        content: |-
+          - Weiterbildung zur Psychologischen Psychotherapeutin am ZfP Chemnitz.
+          - Praktikum am Klinikum Zschopau (10/2012 - 12/2012).
+          - Tätigkeit als Psychologin auf der Akutpsychiatrie am Klinikum Zschopau (2012 - 2015), einschließlich Einsätzen auf der Suchtstation, Tagesklinik, Gerontologie und Onkologie.
+          - Psychologin an der Sozialpsychiatrischen Tagesklinik des Klinikum Chemnitz (2017 - 2019).
+          - Ambulante psychotherapeutische Tätigkeit am ZfP durchgängig von 2012 - 2021.
+          - Elternzeiten 2015 - 2017 und 2019 - 2021.
+          - Approbation als Psychologische Psychotherapeutin (09/2021).
+
+      - title: "Psychotherapeutische Tätigkeit und Niederlassung"
+        date: "2021 - heute"
+        content: |-
+          - Psychologische Psychotherapeutin an der PHA TUC Chemnitz (10/2021 - 05/2022).
+          - Angestellte Psychotherapeutin (06/2022 - 01/2023).
+          - Eigener Kassensitz in Gemeinschaftspraxis in Rabenstein (seit 02/2023).
+          - Einzelpraxis am Pfarrhübel 41 (seit 10/2024).
+
+      - title: "Weitere berufliche Tätigkeit"
+        school:
+          name: "Diskothek EWerk Reichenbach"
+        date: "2004 - 2008"
+        content: |-
+          Tätigkeit als Barkeeperin.
+
+  # Achievements
+  achievements:
+    enable: true
+    title: "Zusatzqualifikationen"
+    items:
+      - title: EMDR Teil 1
+        content: Grundlagen der Anwendung der EMDR Methode Traumaspezifische Diagnostik, Indikationen und Kontraindikationen, die acht Phasen der EMDR-Behandlung sowie das EMDR-Standard-Protokoll
+        url: https://www.emdr.de/emdr-seminar-teil-1-buchen
+      - title: EMDR Teil 2
+        content: Enthält den Umgang mit komplexeren Blockaden im EMDR Prozess, kognitives Einweben, CIPOS und ressourcenzentrierte EMDR-Techniken.
+        url: https://www.emdr.de/emdr-seminar-teil-2-buchen
+      - title: EMDR Masterclasses
+        content: EMDR Masterclasses sind Vertiefungsseminare zu spezifischen Themen
+        url: https://www.emdr.de/emdr-masterclasses-buchen
+      - title: Fortlaufende Supervision
+        content: Wesentliche Inhalte der Supervision sind die Behandlungsplanung sowie der differenzierte Einsatz der verschiedenen EMDR-Techniken.
+        url: https://www.emdr.de/supervision
+
+
+  # projects
+  projects:
+    enable: false
+
+
+
+  #Contact
+  contact:
+    enable: true
+    # title: "Custom Name"
+    content: Schreiben Sie mir gerne eine <a href="mailto:info@psychotherapie-veronika-winkler.de"> E-Mail</a> oder nutzen Sie das Kontaktformular.
+    btnName: Kontaktformular
+    btnLink: /kontakt
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Recent Posts
+      enable: false
+      disableFeaturedImage: false
+    socialNetworks:
+
+  # List pages like blogs and posts
+  listPages:
+    disableFeaturedImage: false
+
+  # Single pages like blog and post
+  singlePages:
+    socialShare: false
+    readTime:
+      enable: false
+      content: "min read"
+    scrollprogress:
+      enable: false
+    tags:
+      openInNewTab: true
+
+  # For translations
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -| # You can add custom scripts which will be added before </body> tag
+  #  <script type="text/javascript"><!-- any script here --></script>
