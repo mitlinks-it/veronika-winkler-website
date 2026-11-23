@@ -3,7 +3,7 @@ languageCode: "de-DE"
 defaultContentLanguage: "de"
 title: "Veronika Winkler – Psychologische Psychotherapeutin"
 
-# The site uses its own layouts (layouts/), the hugo-profile theme is no longer used.
+# The site uses its own layouts, the hugo-profile theme is no longer used.
 disableKinds:
   - taxonomy
   - term
