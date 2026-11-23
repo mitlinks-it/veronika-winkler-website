@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Params.brand.name }}{{ end }}</title>
+<meta name="description" content="{{ .Params.description | default site.Params.description }}">
+{{- with .Params.robots }}
+<meta name="robots" content="{{ . }}">
+{{- end }}
+<meta name="theme-color" content="#fbf4e6">
+<link rel="icon" href="{{ site.Params.favicon | relURL }}" type="image/svg+xml">
+<link rel="canonical" href="{{ .Permalink }}">
+{{- range slice "cormorant-garamond-latin-600-normal" "dancing-script-latin-500-normal" "lora-latin-400-normal" }}
+<link rel="preload" href="{{ printf "fonts/%s.woff2" . | relURL }}" as="font" type="font/woff2" crossorigin>
+{{- end }}
+<link rel="stylesheet" href="{{ "css/site.css" | relURL }}">

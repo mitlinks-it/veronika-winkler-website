@@ -1,0 +1,138 @@
+{{ define "main" }}
+{{- $p := site.Params }}
+
+{{/* ---------- Hero ---------- */}}
+<section class="hero" aria-labelledby="hero-title">
+  <img class="hero-seeds" src="{{ "images/samen.svg" | relURL }}" alt="" width="300" height="150">
+  <img class="hero-dandelion" src="{{ "images/pusteblume.svg" | relURL }}" alt="" width="124" height="160">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1 id="hero-title">{{ replace $p.hero.title " …" "&nbsp;…" | safeHTML }}</h1>
+      <p class="script hero-script">{{ $p.hero.script }}</p>
+      <svg class="swash" viewBox="0 0 300 16" aria-hidden="true"><path d="M2 12C70 2 170 1 298 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <p class="hero-subtitle">{{ $p.hero.subtitle }}<br><span>{{ $p.hero.subtitleLine2 }}</span></p>
+      <p class="hero-lead">{{ $p.hero.content }}</p>
+      <ul class="hero-highlights">
+        {{- range $p.hero.highlights }}
+        <li><span class="icon-bubble icon-bubble-small">{{ partial "icon.html" .icon }}</span>{{ .text }}</li>
+        {{- end }}
+      </ul>
+      <a class="btn btn-primary btn-large" href="{{ $p.bookingUrl | relURL }}">
+        {{ partial "icon.html" "calendar" }} {{ $p.hero.button }} {{ partial "icon.html" "arrow" }}
+      </a>
+    </div>
+    <figure class="hero-visual">
+      <div class="portrait">
+        <img src="{{ $p.hero.image | relURL }}" alt="{{ $p.hero.imageAlt }}" width="253" height="300" fetchpriority="high">
+      </div>
+      <figcaption class="brush-badge script">
+        {{ $p.hero.badge }}
+        <svg class="icon-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C8 24 3 17 3 11a8 8 0 0 1 17-4 8 8 0 0 1 17 4c0 6-5 13-17 22Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+{{/* ---------- Für wen ---------- */}}
+<section id="angebot" class="section zielgruppen" aria-labelledby="zielgruppen-title">
+  <div class="container">
+    <h2 id="zielgruppen-title" class="section-title"><span>{{ $p.zielgruppen.title }}</span></h2>
+    <ul class="zielgruppen-grid">
+      {{- range $p.zielgruppen.items }}
+      <li class="zielgruppe">
+        <span class="icon-bubble">{{ partial "icon.html" .icon }}</span>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
+
+{{/* ---------- Angebot / Preise / Über mich ---------- */}}
+<section class="section info" aria-label="Angebot, Preise und Über mich">
+  <div class="container info-grid">
+    <article class="card card-angebot" aria-labelledby="angebot-title">
+      <h2 id="angebot-title">{{ $p.angebot.title }}</h2>
+      <p>{{ $p.angebot.content }}</p>
+      <ul class="checklist">
+        {{- range $p.angebot.items }}
+        <li>{{ partial "icon.html" "check" }} {{ . }}</li>
+        {{- end }}
+      </ul>
+      <p class="script card-script">{{ $p.angebot.script }}</p>
+    </article>
+
+    <article id="preise" class="card card-preise" aria-labelledby="preise-title">
+      <h2 id="preise-title">{{ $p.preise.title }}</h2>
+      <p class="preise-intro">{{ $p.preise.intro }}</p>
+      <ul class="price-list">
+        {{- range $p.preise.items }}
+        <li>
+          <a class="price-row" href="{{ printf "%s?frist=%s" $p.bookingUrl .frist | relURL }}" data-frist="{{ .frist }}">
+            <span>{{ .label }} <strong>{{ .highlight }}</strong></span>
+            <span class="price">{{ .price }}&nbsp;€</span>
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+      <div class="paypal">
+        <span class="paypal-logo" role="img" aria-label="PayPal"><em aria-hidden="true">Pay</em><b aria-hidden="true">Pal</b></span>
+      </div>
+      <p class="paypal-note">{{ $p.preise.payment }}</p>
+    </article>
+
+    <article id="ueber-mich" class="card card-about" aria-labelledby="about-title">
+      <h2 id="about-title">{{ $p.ueberMich.title }}</h2>
+      {{- range $p.ueberMich.content }}
+      <p>{{ . }}</p>
+      {{- end }}
+      <div class="card-about-footer">
+        <img src="{{ "images/pusteblume.svg" | relURL }}" alt="" width="62" height="80">
+        <a class="btn btn-outline" href="{{ $p.ueberMich.url | relURL }}">{{ $p.ueberMich.button }} {{ partial "icon.html" "arrow" }}</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+{{/* ---------- Vorteile ---------- */}}
+<section class="vorteile" aria-label="Das erwartet dich">
+  <ul class="container vorteile-grid">
+    {{- range $p.vorteile }}
+    <li>{{ partial "icon.html" .icon }}<span>{{ .text }}</span></li>
+    {{- end }}
+  </ul>
+</section>
+
+{{/* ---------- Ablauf ---------- */}}
+<section id="ablauf" class="section ablauf" aria-labelledby="ablauf-title">
+  <div class="container">
+    <h2 id="ablauf-title" class="section-title"><span>{{ $p.ablauf.title }}</span></h2>
+    <p class="section-lead">{{ $p.ablauf.subtitle }}</p>
+    <ol class="steps">
+      {{- range $p.ablauf.steps }}
+      <li class="step">
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+      </li>
+      {{- end }}
+    </ol>
+    <p class="center">
+      <a class="btn btn-primary" href="{{ $p.bookingUrl | relURL }}">{{ partial "icon.html" "calendar" }} {{ $p.hero.button }} {{ partial "icon.html" "arrow" }}</a>
+    </p>
+  </div>
+</section>
+
+{{/* ---------- FAQ ---------- */}}
+<section id="faq" class="section faq" aria-labelledby="faq-title">
+  <div class="container container-narrow">
+    <h2 id="faq-title" class="section-title"><span>{{ $p.faq.title }}</span></h2>
+    {{- range $p.faq.items }}
+    <details class="faq-item">
+      <summary>{{ .question }}</summary>
+      <p>{{ .answer | safeHTML }}</p>
+    </details>
+    {{- end }}
+  </div>
+</section>
+{{ end }}

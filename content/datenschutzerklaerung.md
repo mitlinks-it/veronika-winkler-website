@@ -1,6 +1,5 @@
 ---
 title: "Datenschutzerklärung"
-layout: "simple"
 robots: "noindex, nofollow"
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Impressum"
-layout: "simple"
 robots: "noindex, nofollow"
 ---
 

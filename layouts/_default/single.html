@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="page">
+  <header class="page-header">
+    <img class="page-seeds" src="{{ "images/samen.svg" | relURL }}" alt="" width="300" height="150">
+    <div class="container container-narrow">
+      <h1>{{ .Title }}</h1>
+      {{- with .Params.lead }}
+      <p class="script page-lead">{{ . }}</p>
+      {{- end }}
+    </div>
+  </header>
+  <div class="container container-narrow">
+    <div class="card prose{{ with .Params.image }} has-image{{ end }}">
+      {{- with .Params.image }}
+      <img class="prose-portrait" src="{{ . | relURL }}" alt="{{ $.Params.imageAlt }}" width="253" height="300">
+      {{- end }}
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

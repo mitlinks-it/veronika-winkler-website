@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="page">
+  <header class="page-header">
+    <div class="container container-narrow">
+      <h1>Seite nicht gefunden</h1>
+      <p class="script page-lead">Diese Seite ist davongeflogen …</p>
+    </div>
+  </header>
+  <div class="container container-narrow center">
+    <a class="btn btn-primary" href="{{ "/" | relURL }}">Zur Startseite {{ partial "icon.html" "arrow" }}</a>
+  </div>
+</article>
+{{ end }}
